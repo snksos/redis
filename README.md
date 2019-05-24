@@ -1,10 +1,16 @@
+
+定制redis镜像，修改默认配置文件
+
+### docker-compose
+
+```yaml
 version: "3"
 services:
     redis5:
-        image: "redis-5"
-        build:
-            context: .
-            dockerfile: Dockerfile
+        image: "snkso/redis:5-alpine"
+        #build:
+        #    context: .
+        #    dockerfile: Dockerfile
         stdin_open: true
         restart: always
         tty: true
@@ -13,3 +19,4 @@ services:
             - "./data:/data"
         ports:
           - 16379:6379
+```
